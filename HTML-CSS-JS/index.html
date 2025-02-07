@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Navigation</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    /* Navigation bar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ff69b4;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .navbar h1 {
+      font-size: 1.5em;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar .menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    .navbar .menu a:hover {
+      text-decoration: underline;
+    }
+
+    .hamburger {
+      font-size: 1.5em;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Responsive styles for mobile */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #ff69b4;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu.active {
+        display: flex;
+      }
+    }
+
+    /* Section styling */
+    .section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+
+    h1 {
+      color: #ff69b4;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      color: #555;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+
+    ul {
+      list-style-type: none;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      padding-left: 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #ff69b4;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #ff69b4;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <h1>Iris's Website</h1>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz</a>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <div class="section">
+    <h1>Hello, my name is Iris</h1>
+    <h3>I am a grade six student at Brighton College</h3>
+    <button>About Me</button>
+    <a href="/quiz.html">quiz</a>
+  </div>
+
+  <div class="section">
+    <h1>A bit about my Journey</h1>
+    <p>During the past 2 years, I have found a great appreciation for powerful technology that allows me to live an efficient and reliable lifestyle. Doing so, I have learned computer topics such as Web Development, Mobile Apps, Machine Learning, Cloud, and Data Science.</p>
+
+    <h1>My Technologies</h1>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>VS Code</li>
+      <li>GitHub</li>
+      <li>GitHub Copilot</li>
+      <li>ChatGPT</li>
+      <li>Midjourney</li>
+      <li>Claude</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h1>My Life outside Programming</h1>
+    <p>During my free time, I love to play video games, specifically Honor of Kings, Eggy Party, and Identity.</p>
+    <p>I am a sister to a cat named Milk.</p>
+    <p>I also love sports, with my favorites being badminton, tennis, and volleyball.</p>
+  </div>
+
+  <div class="section work">
+    <h1>Here's My Work!</h1>
+    <h3>Title</h3>
+    <p>Description</p>
+    <img src="/img.jpeg" alt="Project Image">
+    <a href="">Demo here</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
